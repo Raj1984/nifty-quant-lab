@@ -1,0 +1,79 @@
+# ============================================================
+# NIFTY Quant Lab — Python Dependencies
+# ============================================================
+# Install:  pip install -r requirements.txt
+# Conda:    conda activate kite_auto && pip install -r requirements.txt
+#
+# Sources reviewed for dependency decisions:
+#   gs-quant:      pandas, scipy, statsmodels, httpx, asyncio
+#   OpenBB:        pydantic, httpx, provider abstraction
+#   qlib:          numpy, lightgbm, pandas, scipy
+#   vectorbt:      numpy, pandas, numba, plotly
+#   PyPortfolioOpt: cvxpy, scipy, scikit-learn
+#   Lean (Python): pure stdlib + AlgorithmImports
+# ============================================================
+
+# ── Core
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# ── Database
+sqlalchemy>=2.0.25
+aiomysql>=0.2.0          # async MySQL driver (FastAPI / background tasks)
+PyMySQL>=1.1.0           # sync MySQL driver (Alembic / scripts)
+cryptography>=42.0.0     # required by PyMySQL for mysql_native_password
+alembic>=1.13.0
+
+# ── API
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+httpx>=0.26.0
+
+# ── Scheduler
+APScheduler>=3.10.4
+pytz>=2024.1
+
+# ── Market Data
+yfinance>=0.2.36
+
+# ── Numerical / Data Science
+numpy>=1.26.0,<2.0.0
+pandas>=2.1.0
+scipy>=1.12.0
+
+# ── ML / Optimization (Phase 3+)
+scikit-learn>=1.4.0
+lightgbm>=4.3.0
+cvxpy>=1.4.0             # PyPortfolioOpt: portfolio optimization
+
+# ── Dashboard
+streamlit>=1.31.0
+plotly>=5.18.0
+
+# ── Reporting
+openpyxl>=3.1.2          # Excel report generation
+# weasyprint>=60.0        # PDF generation (optional — needs system libs)
+
+# ── Caching
+redis>=5.0.0
+
+# ── Utilities
+python-dateutil>=2.8.2
+tqdm>=4.66.0
+loguru>=0.7.0            # optional structured logging
+
+# ── Broker APIs (activate as needed)
+# kiteconnect>=5.0.1     # Zerodha KiteConnect
+# smartapi-python>=1.3.9 # Angel One SmartAPI
+
+# ── AI Signals (Phase 3)
+# openai>=1.12.0
+# ollama>=0.1.7
+
+# ── Dev / Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+ruff>=0.2.0              # linting
+black>=24.0.0            # formatting

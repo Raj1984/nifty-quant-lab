@@ -1,0 +1,52 @@
+# Environment
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+reports/coverage/
+
+# Data (large files — store externally)
+data/storage/*.parquet
+data/storage/*.db
+data/storage/*.sqlite
+
+# Reports output
+reports/output/
+
+# Logs
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker
+*.pid
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Alembic (generated migrations are committed, but not pycache)
+alembic/versions/__pycache__/
